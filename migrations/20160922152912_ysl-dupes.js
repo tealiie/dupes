@@ -1,0 +1,14 @@
+exports.up = function(knex, Promise) {
+  return knex.schema.createTable('ysl-dupes', function (table) {
+    table.increments('id').primary()
+    table.string('brand')
+    table.string('name')
+    table.string('colour')
+    table.string('url')
+    table.integer('price')
+  })
+};
+
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTable('ysl-dupes')
+};
