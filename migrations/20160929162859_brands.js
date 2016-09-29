@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('ysl', function (table) {
+  return knex.schema.createTable('brands', function (table) {
     table.increments('id').primary()
     table.string('brand')
     table.string('name')
@@ -9,5 +9,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('ysl')
+  return knex.schema.dropTable('brands')
 };
