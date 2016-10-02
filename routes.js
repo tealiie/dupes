@@ -10,7 +10,7 @@ module.exports = {
 }
 
 //shows in the initial index of cate
-function category (req, res) {
+function cate (req, res) {
   knex('cate')
   .select()
   .then(function ('cate') {
