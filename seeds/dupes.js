@@ -6,9 +6,9 @@ exports.seed = function(knex, Promise) {
         knex('dupes').insert({id: 2, product_id: 4, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
         knex('dupes').insert({id: 3, product_id: 4, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
         knex('dupes').insert({id: 4, product_id: 4, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
-        knex('dupes').insert({id: 5, product_id: 4, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
-        knex('dupes').insert({id: 6, product_id: 4, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
-        knex('dupes').insert({id: 7, product_id: 4, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6})
+        knex('dupes').insert({id: 5, product_id: 3, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
+        knex('dupes').insert({id: 6, product_id: 3, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6}),
+        knex('dupes').insert({id: 7, product_id: 2, brand: 'Colourpop', name: 'Ultra Satin Lip', colour: 'Cozy', price: 6})
       ]);
     });
 };
