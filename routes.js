@@ -3,9 +3,9 @@ var development = require('./knexfile').development
 var knex = require('knex')(development)
 
 module.exports = {
-  cate: cate
-  // brands: brands,
-  // getProducts: getProducts,
+  cate: cate,
+  brands: brands,
+  // products: products,
   // getDupes: getDupes
 }
 
@@ -22,15 +22,24 @@ function cate (req, res) {
 }
 
 //to get the brands of a category
-// function getBrands (req, res) {
-//   knex('brands')
-//   .join('cate')
-// }
+function brands (req, res) {
+  knex('products')
+  .join('brands', 'products.brand_id', '=', 'brands.id')
+  .join('cate', 'products.cate_id', '=', 'cate.id')
+  .select('brands.name')
+  .where('cate.id', req.query.cateId)
+  .then(function (brands) {
+    res.render('brands', { cate: brands })
+  })
+  .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
+}
 
 //to get the products of a certain brand
-// function getProducts (req, res) {
-//   knex('brands')
-//   .join('products', 'brands.name', '=', 'products.brand_id')
+// function Products (req, res) {
+//   knex('products')
+//   .join('brands', 'product', '=', 'products.brand_id')
 //   .select('brands.name', 'products.name as products')
 //   .then(function (data) {
 //     res.render(data)
