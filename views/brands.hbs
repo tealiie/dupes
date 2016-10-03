@@ -5,9 +5,13 @@
     <title>Brands pages</title>
   </head>
   <body>
-    {{#each cate}}
-    {{name}}
+  <p>BRANDS</p>
+  <div>
+    {{#each brands}}
+      <ul>
+      <li><a href=products/{{brand}}>{{brand}}</a></li>
+      </ul>
     {{/each}}
-    this should show brands
+  </div>
   </body>
 </html>

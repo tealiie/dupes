@@ -13,8 +13,8 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', index.cate)
-app.get('/brands/:cateId', index.brands)
+app.get('/', index.category)
+app.get('/brands/:id', index.brands)
 
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)
