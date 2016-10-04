@@ -5,10 +5,15 @@
     <title>Products</title>
   </head>
   <body>
-    {{#each products}}
-    {{brand}}
-    {{colour}}
-    {{price}}
-    {{/each}}
+    <h1>PRODUCTS</h1>
+    <div>
+      {{#each products}}
+        <ul>
+        <li>{{name}}</li>
+        <li><a href=dupes/{{id}}>{{colour}}</a></li>
+        {{price}}
+        </ul>
+      {{/each}}
+    </div>
   </body>
 </html>

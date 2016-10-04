@@ -5,12 +5,17 @@
     <title>Dupes</title>
   </head>
   <body>
-    <p>dupes page</p>
-    {{#each dupes}}
-    {{brand}}
-    {{name}}
-    {{colour}}
-    {{price}}
-    {{/each}}
+<h1>DUPES</h1>
+{{#each dupes}}
+  <ul>
+  <li>{{brand}}</li>
+  <li>{{name}}</li>
+  <li>{{colour}}</li>
+  <li>{{price}}</li>
+  </ul>
+{{/each}}
+<p>
+  this should show dupes
+</p>
   </body>
 </html>

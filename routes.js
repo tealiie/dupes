@@ -5,8 +5,8 @@ var knex = require('knex')(development)
 module.exports = {
   category: category,
   brands: brands,
-  // products: products,
-  // getDupes: getDupes
+  products: products,
+  dupes: dupes
 }
 
 //shows in the initial index of cate
@@ -25,7 +25,7 @@ function category (req, res) {
 function brands (req, res) {
   knex('brands')
   .join('categories', 'brands.category_id', '=', 'categories.id')
-  .select('brands.brand')
+  .select('brands.id','brands.brand')
   .where('brands.category_id', '=', req.params.id)
   .then(function (brands) {
     res.render('brands', { brands: brands })
@@ -35,49 +35,30 @@ function brands (req, res) {
 })
 }
 
-// function getGenre(req, res) {
-//   var genre = req.query.genre
-//   db.getMovies(genre, function (err, movies) {
-//     if (err) {
-//       return res.send(err.message)
-//     }
-//     var vm = {
-//       movies: movies
-//     }
-//     res.render('index', vm)
-//   })
-// }
-
-// function brands (req, res) {
-//   knex('products')
-//   .join('brands', 'products.brand_id', '=', 'brands.id')
-//   .join('cate', 'products.cate_id', '=', 'cate.id')
-//   .select('brands.name')
-//   .where('cate.id', req.query.cateId)
-//   .then(function (brands) {
-//     res.render('brands', { cate: brands })
-//   })
-//   .catch(function (err) {
-//     res.status(500).send('DATABASE ERROR: ' + err.message)
-//   })
-// }
-
 //to get the products of a certain brand
-// function Products (req, res) {
-//   knex('products')
-//   .join('brands', 'product', '=', 'products.brand_id')
-//   .select('brands.name', 'products.name as products')
-//   .then(function (data) {
-//     res.render(data)
-//   })
-// }
-//
-// //to get the dupes of a product
-//   function getDupes (req, res) {
-//   knex('products')
-//   .join('dupes', 'products.id', '=', 'dupes.product_id')
-//   .select('products.colour', 'dupes.colour as dupes')
-//   .then(function (data) {
-//     res.render(data)
-//   })
-// }
+function products (req, res) {
+  knex('products')
+  .join('brands', 'products.brand_id', '=', 'brands.id')
+  .select('products.id', 'products.name', 'products.colour', 'products.price')
+  .where('brands.id', '=', req.params.id)
+  .then(function (products) {
+    res.render('products', { products: products })
+  })
+  .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+})
+}
+
+//to get the dupes of a product
+function dupes (req, res) {
+  knex('dupes')
+  .join('products', 'dupes.product_id', '=', 'products.id')
+  .select('products.id', 'dupes.product_id', 'dupes.brand', 'dupes.name', 'dupes.colour', 'dupes.price')
+  .where('products.id', '=', req.params.id)
+  .then(function (dupes) {
+    res.render('dupes', { dupes: dupes })
+  })
+  .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+})
+}

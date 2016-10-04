@@ -15,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', index.category)
 app.get('/brands/:id', index.brands)
+app.get('/brands/products/:id', index.products)
+app.get('/brands/products/dupes/:id', index.dupes)
 
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)
