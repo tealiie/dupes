@@ -2,6 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <title>Products</title>
   </head>
   <body>
@@ -15,11 +18,14 @@
 
     <div class="products">
       {{#each products}}
-      <img src="{{image}}" alt="Picture" />
-        <ul>
-        <li><a href=dupes/{{id}}>{{colour}}</a></li>
-        {{price}}<br><br>
-        </ul>
+        <div class="item">
+          <img src="{{image}}" alt="Picture" />
+          <ul>
+            <li>{{name}}</li>
+          <li><strong>Colour: <a href=dupes/{{id}}>{{colour}}</a></strong></li>
+          <li><strong>Price:</strong> ${{price}}</li><br><br>
+          </ul>
+      </div>
       {{/each}}
     </div>
   </body>

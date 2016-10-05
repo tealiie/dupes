@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <title>Dupes</title>
   </head>
 
@@ -17,7 +19,10 @@
 
     <div class="categories">
     {{#each cate}}
-    <a href="brands/{{id}}">{{category}}</a>
+    <div >
+      <img class="cate" src="{{image}}" alt="Picture" /><br>
+      <a href="brands/{{id}}">{{category}}</a><br>
+    </div>
     {{/each}}
     </div>
 
