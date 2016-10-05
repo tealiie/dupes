@@ -53,7 +53,7 @@ function products (req, res) {
 function dupes (req, res) {
   knex('dupes')
   .join('products', 'dupes.product_id', '=', 'products.id')
-  .select('products.id', 'dupes.product_id', 'dupes.brand', 'dupes.name', 'dupes.colour', 'dupes.price')
+  .select('products.id', 'dupes.product_id', 'dupes.brand', 'dupes.name', 'dupes.colour', 'dupes.price', 'dupes.image')
   .where('products.id', '=', req.params.id)
   .then(function (dupes) {
     res.render('dupes', { dupes: dupes })

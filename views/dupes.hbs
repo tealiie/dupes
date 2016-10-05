@@ -18,14 +18,16 @@
 
     <div class="dupes">
       {{#each dupes}}
+      <div class="item">
+        <img src="{{image}}" alt="Picture" />
         <ul>
-        <li>{{brand}}</li>
-        <li>{{name}}</li>
-        <li>{{colour}}</li>
-        <li>{{price}}</li>
+          <li>{{brand}}</li>
+          <li>{{name}}</li>
+          <li>{{colour}}</li>
+          <li>Price: ${{price}}</li><br><br>
         </ul>
+      </div>
       {{/each}}
     </div>
-
   </body>
 </html>

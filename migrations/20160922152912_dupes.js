@@ -5,7 +5,8 @@ exports.up = function(knex, Promise) {
     table.string('brand')
     table.string('name')
     table.string('colour')
-    table.integer('price')
+    table.decimal('price')
+    table.string('image')
   })
 };
 

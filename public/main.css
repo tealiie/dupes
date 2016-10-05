@@ -89,3 +89,25 @@ img {
 	width: 200px;
 	height: 250px;
 }
+
+.dupes {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px;
+	text-align: center;
+	justify-content: center;
+}
+
+.item {
+	display: flex;
+		flex-wrap: wrap;
+	height: 300px;
+	width: 250px;
+	padding: 30px;
+	justify-content: center;
+}
+
+.item img {
+	width: 200px;
+	height: 250px;
+}
