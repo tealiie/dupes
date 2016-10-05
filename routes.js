@@ -39,7 +39,7 @@ function brands (req, res) {
 function products (req, res) {
   knex('products')
   .join('brands', 'products.brand_id', '=', 'brands.id')
-  .select('products.id', 'products.name', 'products.colour', 'products.price')
+  .select('products.id', 'products.name', 'products.colour', 'products.price', 'products.image')
   .where('brands.id', '=', req.params.id)
   .then(function (products) {
     res.render('products', { products: products })

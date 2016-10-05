@@ -1,15 +1,26 @@
-<!-- index page to show cate table -->
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
     <title>Dupes</title>
   </head>
+
   <body>
-    <h1>Categories</h1>
+    <div class="header">
+      <a href="/"><h1>Dupes</h1></a>
+    </div>
+
+    <div class="subheading">
+      <h3>CATEGORIES</h3>
+    </div>
+
+    <div class="categories">
     {{#each cate}}
     <a href="brands/{{id}}">{{category}}</a>
     {{/each}}
+    </div>
+
+
   </body>
 </html>

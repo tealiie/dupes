@@ -5,13 +5,20 @@
     <title>Products</title>
   </head>
   <body>
-    <h1>PRODUCTS</h1>
-    <div>
+    <div class="header">
+   <a href="/"><h1>Dupes</h1></a>
+    </div>
+
+    <div class="subheading">
+      <h3>PRODUCTS</h3>
+    </div>
+
+    <div class="products">
       {{#each products}}
+      <img src="{{image}}" alt="Picture" />
         <ul>
-        <li>{{name}}</li>
         <li><a href=dupes/{{id}}>{{colour}}</a></li>
-        {{price}}
+        {{price}}<br><br>
         </ul>
       {{/each}}
     </div>
